@@ -158,7 +158,3 @@ Don’t forget to run `$ npm install` when you have the `package.json`
 7. File publish/unpublish
 8. File data
 9. Image Thumbnails
-
-### Author
-
-**Khaled Jallouli**
