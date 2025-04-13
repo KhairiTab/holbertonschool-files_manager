@@ -1,18 +1,23 @@
 // server.js
 import express from 'express';
-import routes from './routes/index.js'; // <-- Include .js if using ESM
+import routes from './routes/index.js';
+import dotenv from 'dotenv';
 
-// Create Express application
+// Load environment variables from .env file if present
+dotenv.config();
+
 const app = express();
-const port = process.env.PORT || 5000;
 
-// Middleware to parse JSON
+// Middleware to parse JSON request bodies
 app.use(express.json());
 
-// Load routes
+// Load all routes
 app.use('/', routes);
 
+// Get the port from environment or use 5000
+const PORT = process.env.PORT || 5000;
+
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
